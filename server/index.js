@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://amjad-task-manager.netlify.app", "http://localhost:3000", "http://localhost:3001"],
+    origin: ["https://amjad-task-manager.netlify.app", "http://localhost:3000"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     responseHeader : ["Content-Type"],
     credentials: true,
