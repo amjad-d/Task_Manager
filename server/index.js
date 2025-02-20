@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://task-manager-1-a9k5.onrender.com",
     methods: ["GET", "POST", "DELETE", "PUT"],
     responseHeader : ["Content-Type"],
     credentials: true,
