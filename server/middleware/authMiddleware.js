@@ -4,6 +4,9 @@ import User from "../models/userModel.js";
 
 const protectRoute = asyncHandler(async (req, res, next) => {
   let token = req.headers.authorization; // قراءة الـ Token من الرأس
+  if (token && token.startsWith('Bearer ')) {
+    token = token.split(' ')[1]; // إزالة كلمة "Bearer" من الـ Token
+  }
   if (token) {
     try {
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
