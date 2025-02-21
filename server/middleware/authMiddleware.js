@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
 
 const protectRoute = asyncHandler(async (req, res, next) => {
-  let token = req.cookies.token;
+  let token = req.headers.authorization; // قراءة الـ Token من الرأس
   if (token) {
     try {
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
