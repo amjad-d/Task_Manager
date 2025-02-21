@@ -5,7 +5,6 @@ import User from "../models/userModel.js";
 const protectRoute = asyncHandler(async (req, res, next) => {
   let token = req.headers.authorization; // قراءة الـ Token من الرأس
   if (token && token.startsWith('Bearer ')) {
-    console.log(('token');
     token = token.split(' ')[1]; // إزالة كلمة "Bearer" من الـ Token
   }
   if (token) {
