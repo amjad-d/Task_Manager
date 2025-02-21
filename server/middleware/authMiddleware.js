@@ -25,7 +25,7 @@ const protectRoute = asyncHandler(async (req, res, next) => {
   } else {
     return res
       .status(401)
-      .json({ status: false, message: "Not authorized. Try login again." });
+      .json({ status: false, message: "error in token." });
   }
 });
 
